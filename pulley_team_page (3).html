@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meet the Pulley Permit Operations Team</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #ffffff;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+        
+        .hero {
+            text-align: center;
+            margin-bottom: 60px;
+            padding: 60px 20px;
+            background: linear-gradient(135deg, #4a3f8f 0%, #5b4fa3 100%);
+            color: white;
+            border-radius: 12px;
+        }
+        
+        .hero h1 {
+            font-size: 48px;
+            font-weight: 700;
+            letter-spacing: -1px;
+        }
+        
+        .section-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        
+        .section-header h2 {
+            font-size: 36px;
+            font-weight: 700;
+            color: #1a1a1a;
+            margin-bottom: 12px;
+        }
+        
+        .section-header p {
+            font-size: 18px;
+            color: #666;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 40px;
+            margin-bottom: 80px;
+        }
+        
+        .team-card {
+            background: white;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .team-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 30px rgba(0,0,0,0.12);
+        }
+        
+        .card-content {
+            padding: 30px;
+        }
+        
+        .card-header {
+            margin-bottom: 20px;
+        }
+        
+        .card-name {
+            font-size: 26px;
+            font-weight: 700;
+            color: #1a1a1a;
+            margin-bottom: 8px;
+        }
+        
+        .card-title {
+            font-size: 16px;
+            color: #4a3f8f;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        .card-experience {
+            font-size: 15px;
+            color: #666;
+            margin-bottom: 20px;
+            padding-bottom: 20px;
+            border-bottom: 2px solid #f0f0f0;
+        }
+        
+        .card-bio {
+            font-size: 15px;
+            color: #444;
+            line-height: 1.7;
+        }
+        
+        .card-bio strong {
+            color: #1a1a1a;
+            display: block;
+            margin-top: 16px;
+            margin-bottom: 6px;
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        .quote-highlight {
+            background: #f8f7fc;
+            border-left: 4px solid #4a3f8f;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 8px;
+            font-style: italic;
+            color: #555;
+        }
+        
+        .wins-section {
+            margin-top: 80px;
+            background: #f9f9f9;
+            padding: 60px 40px;
+            border-radius: 16px;
+        }
+        
+        .wins-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .win-card {
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .win-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+        }
+        
+        .win-header {
+            margin-bottom: 20px;
+        }
+        
+        .win-location {
+            font-size: 20px;
+            font-weight: 700;
+            color: #1a1a1a;
+        }
+        
+        .win-metric {
+            background: linear-gradient(135deg, #4a3f8f 0%, #5b4fa3 100%);
+            color: white;
+            padding: 16px 20px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        
+        .win-metric-value {
+            font-size: 28px;
+            font-weight: 700;
+            margin-bottom: 4px;
+        }
+        
+        .win-metric-label {
+            font-size: 13px;
+            opacity: 0.9;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        .win-details h4 {
+            font-size: 15px;
+            font-weight: 700;
+            color: #4a3f8f;
+            margin-top: 20px;
+            margin-bottom: 8px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        .win-details p {
+            font-size: 15px;
+            color: #555;
+            line-height: 1.6;
+            margin-bottom: 12px;
+        }
+        
+        .impact-highlight {
+            background: #fff8e1;
+            border-left: 4px solid #ffc107;
+            padding: 16px;
+            margin-top: 16px;
+            border-radius: 6px;
+            font-weight: 600;
+            color: #333;
+        }
+        
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 36px;
+            }
+            
+            .hero p {
+                font-size: 18px;
+            }
+            
+            .team-grid, .wins-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .section-header h2 {
+                font-size: 28px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="hero">
+            <h1>Meet the Pulley Permit Operations Team</h1>
+        </div>
+
+        <!-- Team Section -->
+        <div class="section-header">
+            <h2>Meet a few members of the team</h2>
+        </div>
+
+        <div class="team-grid">
+            <!-- Carter Haas -->
+            <div class="team-card">
+                <div class="card-content">
+                    <div class="card-header">
+                        <h3 class="card-name">Carter Haas, AIA, NCARB</h3>
+                        <p class="card-title">Regional Lead | Northeast Interior</p>
+                    </div>
+                    <p class="card-experience">Licensed architect in Illinois and Wisconsin with extensive experience in science, healthcare, and education markets. Led teams through complex laboratory and healthcare facility projects before joining Pulley.</p>
+                    <div class="card-bio">
+                        <div class="quote-highlight">"Providing review comments to architects prior to submission, then receiving no comments from the AHJ as a result is the best feeling."</div>
+                        
+                        <strong>What are you hoping to improve within the world of architecture and construction?</strong>
+                        <p>Efficiency - that is a big reason I was drawn to labs and healthcare (and now Pulley!). In lab design, if you can reduce the number of steps between pieces of equipment or make the researchers' processes more efficient, you really play a part in making the world a better place.</p>
+                        
+                        <strong>What feature in Pulley do you love using the most?</strong>
+                        <p>The discussion tool - it keeps all correspondence around a task, comment, document, etc. in one place, for all to see. It provides awesome visibility for people not intimately familiar with the project.</p>
+                        
+                        <strong>What do you wish more clients would do when using Pulley?</strong>
+                        <p>Invite all of their consultants: architects, engineers, contractors. When everyone is on the project in Pulley, outcomes are so much better!</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Sabrina Hyman -->
+            <div class="team-card">
+                <div class="card-content">
+                    <div class="card-header">
+                        <h3 class="card-name">Sabrina Hyman, LEED Green Associate</h3>
+                        <p class="card-title">Regional Lead | Pacific Coast</p>
+                    </div>
+                    <p class="card-experience">Urban planning professional with Master's degree from USC. Extensive background in environmental planning, project management for large-scale commercial real estate, and navigating multi-jurisdictional permitting processes across the United States.</p>
+                    <div class="card-bio">
+                        <div class="quote-highlight">"I've always been drawn to the idea of making good design more accessible. Today, I see permitting as an extension of the mission of helping good design reach more people, in more places."</div>
+                        
+                        <strong>What are you hoping to improve within the world of architecture and construction?</strong>
+                        <p>I'm hoping to help push the industry toward more sustainable, efficient, and people-centered outcomes. Buildings and construction are responsible for nearly 40% of global greenhouse gas emissions, yet the processes we use to build them are still among the most inefficient.</p>
+                        
+                        <strong>What is one common mistake you see made in the permit submittal process?</strong>
+                        <p>Missing basic project information on the title sheet!</p>
+                        
+                        <strong>What is one thing you do that makes a huge difference in your approval outcomes?</strong>
+                        <p>Staying consistently engaged with cities—following up, calling, and maintaining momentum. Jurisdictions are often overloaded and understaffed, so simply submitting an application isn't enough.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Austin Hodges -->
+            <div class="team-card">
+                <div class="card-content">
+                    <div class="card-header">
+                        <h3 class="card-name">Austin Hodges</h3>
+                        <p class="card-title">Regional Lead | Mountain Maritime</p>
+                    </div>
+                    <p class="card-experience">Registered architect with over 9 years experience specializing in K-12 school projects along the Colorado front range. Background includes architectural design, BIM coordination, and construction administration for education studios.</p>
+                    <div class="card-bio">
+                        <div class="quote-highlight">"During the week, I navigate the complexities of the built world. On weekends, I recharge in the mountains. It's a powerful contrast."</div>
+                        
+                        <strong>What was your background and career journey before Pulley?</strong>
+                        <p>I spent over 9 years working in the architecture and construction space. Before Pulley, I was a project architect for various firms specializing in K-12 schools along the Colorado front range.</p>
+                        
+                        <strong>Tell us about a memorable project with Pulley:</strong>
+                        <p>I got a project approved in Jacksonville, Florida about 90 days ahead of schedule by asking the right questions and emphasizing due diligence. We leveraged Pulley's Expert Network to clarify the requirements we needed since it's a notoriously difficult jurisdiction.</p>
+                        
+                        <strong>What makes Pulley different from other permitting options to you?</strong>
+                        <p>VISIBILITY - I don't know of any other service that provides visibility at all levels of detail from high-level schedule information to each plan review comment.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="team-grid">
+            <!-- Corey Albrecht -->
+            <div class="team-card">
+                <div class="card-content">
+                    <div class="card-header">
+                        <h3 class="card-name">Corey M. Albrecht, AIA, NCARB</h3>
+                        <p class="card-title">Project Manager</p>
+                    </div>
+                    <p class="card-experience">Licensed architect in North Carolina with 7+ years experience in multifamily housing, retail, adaptive reuse, and mixed use across NC, SC, and FL. Former Associate and BIM Coordinator at Cline Design Associates.</p>
+                    <div class="card-bio">
+                        <div class="quote-highlight">"Permitting is a practice in empathy. A clean submittal package can make the reviewer's life so much easier. And for our projects, that can make all the difference."</div>
+                        
+                        <strong>What first made you interested in the built environment?</strong>
+                        <p>I took a basic drafting class early on in middle school and learned how to use AutoCAD. That got me interested in design and architecture. As a kid I was always taking things apart just to see how they worked.</p>
+                        
+                        <strong>Tell us about a memorable Pulley project you've worked on:</strong>
+                        <p>One project really showed how different we are from expeditors or other permit management software. We had a project in Texas where the AHJ required a registered accessibility specialist, but our client didn't have one on their team. Rather than letting that become a roadblock, we tapped into our own network and brought in a local specialist.</p>
+                        
+                        <strong>What feature on Pulley do you love using the most?</strong>
+                        <p>Pulley has direct integrations built into our platform called CitySync, it automatically updates submittal statuses from AHJ portals, which saves so much time and keeps everyone in the loop without needing manual checking.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Stephanie Jones -->
+            <div class="team-card">
+                <div class="card-content">
+                    <div class="card-header">
+                        <h3 class="card-name">Stephanie Jones, R.A.</h3>
+                        <p class="card-title">Project Manager</p>
+                    </div>
+                    <p class="card-experience">Licensed architect in New York State with 9+ years experience at Architecture Outfit. Active member of AIA New York's Civic Leadership Program, TORCH Mentorship Program, and Women in Architecture Committee.</p>
+                    <div class="card-bio">
+                        <div class="quote-highlight">"I've always been drawn to the idea of making good design more accessible. Today, I see permitting as an extension of the mission of helping good design reach more people, in more places."</div>
+                        
+                        <strong>Tell us about a memorable Pulley project you've worked on:</strong>
+                        <p>During a tough plan review, I hit a wall with an examiner who continued flagging issues we already addressed. The project was at risk of major delays, so I reached out to the local city council member's office to facilitate a direct conversation. That step made all the difference.</p>
+                        
+                        <strong>What is one thing you prioritize that significantly improves permitting outcomes?</strong>
+                        <p>Operating nationwide, it's super important to me to make sure teams are always aware of local code adoptions and amendments. Working as an architect in NYC can sometimes feel like you're an archaeologist, digging through layers of zoning text, bulletins, and historical amendments.</p>
+                        
+                        <strong>What feature on Pulley do you love using the most?</strong>
+                        <p>I love the discussion feature! Being able to have in-app conversations about specific submittal items is so helpful for both giving and receiving feedback while tracking decisions.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Katie Gray -->
+            <div class="team-card">
+                <div class="card-content">
+                    <div class="card-header">
+                        <h3 class="card-name">Katie Gray</h3>
+                        <p class="card-title">Project Manager</p>
+                    </div>
+                    <p class="card-experience">Architect with 10+ years experience spanning commercial interiors in D.C. to project management for development and design firms in Nashville. Originally drawn to historic preservation, found strength in streamlining complex projects.</p>
+                    <div class="card-bio">
+                        <strong>Quick Win:</strong>
+                        <p>45 approvals in just six months, with one project turned around (from intake to plan approval) in only 23 hours! 🚀</p>
+                        
+                        <strong>What is one thing you do that makes a huge difference in your approval outcomes?</strong>
+                        <p>I personally call the reviewers and AHJs and speak to them in a polite and friendly manner. When it comes down to it, they are people doing their jobs just like us, and they deserve to be treated as such. Adding the human element and decency to say "thank you" goes a long way.</p>
+                        
+                        <strong>What is one thing Pulley does better (or differently) from traditional expediting?</strong>
+                        <p>It is so much more organized and transparent than traditional expediting services. With Pulley, not only do you have a platform that provides real-time information and tracking, but the Project Managers are absolutely dedicated to getting your permit across the finish line.</p>
+                        
+                        <strong>Is there a jurisdiction that presented a challenge? How did you tackle it?</strong>
+                        <p>I was brought onto a project in Tampa, FL where the building permit had holds that halted issuance. Tampa requires Water and Wastewater Commitment Letters - a 5-6 week process. Pulley got an Early Start Notice from the AHJ so the GC wasn't held up. I called the Water Department weekly until we received approvals 3 weeks ahead of schedule.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Client Wins Section -->
+        <div class="wins-section">
+            <div class="section-header">
+                <h2>Client Wins</h2>
+                <p>Real results from real projects - see how our team helps clients break ground faster</p>
+            </div>
+
+            <div class="wins-grid">
+                <!-- Win 1: Hackettstown, NJ -->
+                <div class="win-card">
+                    <div class="win-header">
+                        <h3 class="win-location">Hackettstown, NJ</h3>
+                    </div>
+                    <div class="win-metric">
+                        <div class="win-metric-value">10 Weeks Early</div>
+                        <div class="win-metric-label">From 14 → 4 weeks</div>
+                    </div>
+                    <div class="win-details">
+                        <h4>The Win</h4>
+                        <p>A fast-growing restaurant brand received all approvals across Health, Water, and Building departments in 4 weeks with no comments!</p>
+                        
+                        <h4>How it Happened</h4>
+                        <p>1. Leveraged data from past projects in the same city to forecast timelines and spot risks early</p>
+                        <p>2. Pulley Pro David Groveman proactively completed detailed pre-checks before filing, preventing typical rejections</p>
+                        <p>3. All documentation accepted on first submittal, clearing every review in a single round</p>
+                        
+                        <div class="impact-highlight">
+                            💰 Impact: 2.5 months of additional operating time = ~$560,000 in additional revenue
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Win 2: Kannapolis, NC -->
+                <div class="win-card">
+                    <div class="win-header">
+                        <h3 class="win-location">Kannapolis, NC</h3>
+                    </div>
+                    <div class="win-metric">
+                        <div class="win-metric-value">10 Weeks Saved</div>
+                        <div class="win-metric-label">From 15 → 5.5 weeks</div>
+                    </div>
+                    <div class="win-details">
+                        <h4>The Win</h4>
+                        <p>Client's target was 15 weeks. We forecasted 11 weeks. Actual approvals took only 5.5 weeks, saving over 10 weeks.</p>
+                        
+                        <h4>How it Happened</h4>
+                        <p>During initial due diligence, Pulley Pro Steven Thesman caught a new 2025 zoning clearance requirement, preventing delays downstream. Strong drawings from the client and consultants received no comments from the city for a clean approval.</p>
+                        
+                        <div class="impact-highlight">
+                            💰 Impact: 9.5 weeks saved at $7,000/day = up to $465,500 in additional revenue
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Win 3: Rolling Meadows, IL -->
+                <div class="win-card">
+                    <div class="win-header">
+                        <h3 class="win-location">Rolling Meadows, IL</h3>
+                    </div>
+                    <div class="win-metric">
+                        <div class="win-metric-value">2 Week Approval</div>
+                        <div class="win-metric-label">Beat forecast despite delay</div>
+                    </div>
+                    <div class="win-details">
+                        <h4>The Win</h4>
+                        <p>A national wireless retailer secured a permit in just 2 weeks, beating their forecast despite an initial submittal delay.</p>
+                        
+                        <h4>How it Happened</h4>
+                        <p>Pulley Pro Carter Haas caught a sneaky missing requirement: the city required wet-sealed plans for intake. Carter acquired the seals and hand-delivered the plans to the city to guarantee same-day acceptance and start immediate routing to reviewers.</p>
+                        
+                        <div class="impact-highlight">
+                            💰 Impact: Avoided 2-week delay and ~$20K in holding costs
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Win 4: Plano, TX -->
+                <div class="win-card">
+                    <div class="win-header">
+                        <h3 class="win-location">Plano, TX</h3>
+                    </div>
+                    <div class="win-metric">
+                        <div class="win-metric-value">60% Faster</div>
+                        <div class="win-metric-label">12 days vs 6 weeks</div>
+                    </div>
+                    <div class="win-details">
+                        <h4>The Win</h4>
+                        <p>[solidcore] secured building approval in 12 days with no comments, 60% faster than the expected 6-week, 2-round review cycle.</p>
+                        
+                        <p>"We went out and celebrated after that. We were like, 'We don't know what to do with all this time on our hands,'" - Lou Benedetto, VP of Director and Construction</p>
+                        
+                        <h4>How it Happened</h4>
+                        <p>After confirming the AHJ's review process and double-checking requirements, Pulley Pro Andriy Grygorenko, RA worked closely with AORs and the wider team to deliver a perfect submittal that required no revisions.</p>
+                        
+                        <div class="impact-highlight">
+                            💰 Impact: Six figures in unlocked revenue potential from accelerated opening
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Win 5: Anderson, SC -->
+                <div class="win-card">
+                    <div class="win-header">
+                        <h3 class="win-location">Anderson, SC</h3>
+                    </div>
+                    <div class="win-metric">
+                        <div class="win-metric-value">3 Weeks Early</div>
+                        <div class="win-metric-label">Zero comments</div>
+                    </div>
+                    <div class="win-details">
+                        <h4>The Win</h4>
+                        <p>A national quick-service restaurant secured building and health permits 3 weeks ahead of schedule with zero comments.</p>
+                        
+                        <h4>How it Happened</h4>
+                        <p>The project required separate reviews from city and state agencies, each with different submission processes and timelines. Pulley Pro Steven T. coordinated both submittals concurrently and ensured each department received complete, compliant packages.</p>
+                        
+                        <div class="impact-highlight">
+                            💰 Impact: $30K holding cost savings + $240K revenue opportunity = $270K total impact
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Win 6: Ocean Breeze, FL -->
+                <div class="win-card">
+                    <div class="win-header">
+                        <h3 class="win-location">Ocean Breeze, FL</h3>
+                    </div>
+                    <div class="win-metric">
+                        <div class="win-metric-value">9 Weeks Early</div>
+                        <div class="win-metric-label">First-round approval</div>
+                    </div>
+                    <div class="win-details">
+                        <h4>The Win</h4>
+                        <p>A national retail brand secured first-round building and fire approvals with zero comments, clearing permits 9 weeks ahead of forecast on a ground-up project.</p>
+                        
+                        <h4>How it Happened</h4>
+                        <p>The project required parallel reviews from a town building department and a county fire authority, each with different submission portals and technical requirements. Pulley coordinated both submittals concurrently, clarified jurisdiction-specific expectations upfront, and delivered a tightly QA/QC'd drawing set.</p>
+                        
+                        <div class="impact-highlight">
+                            💰 Impact: High six-figure revenue opportunity by accelerating path to opening
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
